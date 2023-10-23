@@ -6,7 +6,7 @@ title: Physical Network Design
 
 This is the simplest solution, suitable for small businesses with a single office.
 
-As it has no built in redudancy, it has the risk that the entire network will go down if any single component fails. It is recommended that a contingency plan is in place to handle the risk of a complete network failure
+As it has no built in redundancy, it has the risk that the entire network will go down if any single component fails. It is recommended that a contingency plan is in place to handle the risk of a complete network failure
 
 Most noteworthy is that there will be a requirement for managed outages when network systems require a reboot for maintenance, updates or other reasons.
 
@@ -33,7 +33,7 @@ subgraph ServerZone[Server Room]
     Storage[Storage NAS]
 end
 
-subgraph EUCZone[Coporate User Offices]
+subgraph EUCZone[Corporate User Offices]
     WiFiAP[Wifi Access Point]
     EUC1[Corporate User 1]
     EUC2[Corporate User 2]
