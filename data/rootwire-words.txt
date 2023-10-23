@@ -1,3 +1,4 @@
 # This file contains cspell exceptions relating to Rootwire terms
 # Keep this file sorted alphabetically
 Rootwire
+opendocs
