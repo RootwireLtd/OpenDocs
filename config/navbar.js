@@ -18,7 +18,7 @@ const navbar = {
       label: 'Community',
     },
     {
-      href: 'https://github.com/rootwire/opendocs',
+      href: 'https://github.com/rootwireltd/opendocs',
       label: 'GitHub',
       position: 'right',
     },

@@ -64,7 +64,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/rootwire/opendocs/edit/main/',
+            'https://github.com/rootwireltd/opendocs/edit/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           remarkPlugins: [],
@@ -100,7 +100,7 @@ const config = {
         path: 'general',
         routeBasePath: 'general',
         sidebarPath: require.resolve('./sidebars/general.js'),
-        editUrl: 'https://github.com/rootwire/opendocs/edit/main/',
+        editUrl: 'https://github.com/rootwireltd/opendocs/edit/main/',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
         remarkPlugins: [],
