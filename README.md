@@ -1,6 +1,10 @@
 # opendocs.rootwire.co.uk
 
-Open Source Documentation
+[![CI - Deploy to Github Pages](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/deploy-to-gh-pages.yml/badge.svg)](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/deploy-to-gh-pages.yml)
+[![CI - Lint on push](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/markdown-lint.yml/badge.svg)](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/markdown-lint.yml)
+[![CI - Test Deployment](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/test-deploy.yml/badge.svg)](https://github.com/RootwireLtd/opendocs.rootwire.co.uk/actions/workflows/test-deploy.yml)
+
+This repository contains the source for the Rootwire OpenDocs website.
 
 ## Installation
 
