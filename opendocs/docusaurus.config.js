@@ -60,11 +60,15 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars/docs.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/rootwire/opendocs/edit/main/',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          remarkPlugins: [],
+          lastVersion: 'current',
         },
         blog: false,
         theme: {
@@ -73,6 +77,11 @@ const config = {
       }),
     ],
   ],
+
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -99,6 +108,10 @@ const config = {
       },
     ],
   ],
+};
+
+module.exports = {
+
 };
 
 module.exports = config;
