@@ -14,21 +14,49 @@ Most noteworthy is that there will be a requirement for managed outages when net
 
 graph TD
 
-WAN[Internet Connection Modem]
-Firewall[Firewall / Router]
-LanSwitch[Lan Switch]
-Server[Server]
-EndUserCompute[Business Workstation]
-WifiAP[Wifi Access Point]
+subgraph WAN[Wan Zone]
+    WAN1[Internet Connection Modem]
+end
 
-WAN --> Firewall
-Firewall --> LanSwitch
+subgraph Edge[Edge Zone]
+    Firewall[Firewall / Router]
+end
+
+WAN1 --> Firewall
+
+subgraph Spine[Network Spine]
+    LanSwitch[Lan Switch]
+end
+
+subgraph ServerZone[Server Room]
+    Server[Server]
+    Storage[Storage NAS]
+end
+
+subgraph EUCZone[Coporate User Offices]
+    WiFiAP[Wifi Access Point]
+    EUC1[Corporate User 1]
+    EUC2[Corporate User 2]
+    EUC3[Corporate User 3]
+    EUC4[Corporate User 4]
+    EUC5[Corporate User 5]
+end    
+
 LanSwitch --> Server
-LanSwitch --> EndUserCompute
-LanSwitch --> WifiAP
+LanSwitch --> Storage
+LanSwitch --> EUC1
+LanSwitch --> EUC2
+LanSwitch --> EUC3
+LanSwitch --> WiFiAP
+WiFiAP --> EUC4
+WiFiAP --> EUC5
+
+
+Firewall --> LanSwitch
+
 ```
 
-## A typical High Availability Design
+## An example High Availability Design
 
 We are making the following assumptions to facilitate a high-availability setup.
 
@@ -55,7 +83,7 @@ It's clear from the diagram below that a high availability configuration introdu
 
 graph TD
 
-subgraph WAN[Wan Zone]
+subgraph WAN[Wide Area Network]
     WAN1[Primary Internet Connection Modem]
     WAN2[Secondary Internet Connection Modem]
     WanSwitch1[Primary WAN Leaf Switch]
@@ -65,7 +93,7 @@ end
 WAN1 --> WanSwitch1
 WAN2 --> WanSwitch2
 
-subgraph Edge[Edge Zone]
+subgraph Edge[Edge]
     Firewall1[Firewall / Router 1]
     Firewall2[Firewall / Router 2]
     EdgeLeafSwitch1[Primary Edge Leaf Switch]
@@ -93,7 +121,7 @@ EdgeLeafSwitch2 --> SpineLanSwitch1
 EdgeLeafSwitch2 --> SpineLanSwitch2
 
 
-subgraph Server[Server Zone]
+subgraph Server[Server Room]
     ServerLanSwitch1[Primary Server Leaf Switch]
     ServerLanSwitch2[Secondary Server Leaf Switch]
     Server1[Server 1]
@@ -105,33 +133,33 @@ subgraph Server[Server Zone]
     ServerLanSwitch2 --> Server1
     ServerLanSwitch2 --> Server2
     ServerLanSwitch2 --> Server3
+
+    SpineLanSwitch1 --> ServerLanSwitch1
+    SpineLanSwitch1 --> ServerLanSwitch2
+    SpineLanSwitch2 --> ServerLanSwitch1
+    SpineLanSwitch2 --> ServerLanSwitch2
+
+
+    Server1 --> StorageSwitch1
+    Server1 --> StorageSwitch2
+    Server2 --> StorageSwitch1
+    Server2 --> StorageSwitch2
+    Server3 --> StorageSwitch1
+    Server3 --> StorageSwitch2
+
+    subgraph Storage[Storage Systems]
+        StorageSwitch1[Storage Switch 1]
+        StorageSwitch2[Storage Switch 2]
+        StorageDevice1[Storage Device 1]
+        StorageDevice2[Storage Device 2]
+        StorageSwitch1 --> StorageDevice1
+        StorageSwitch1 --> StorageDevice2
+        StorageSwitch2 --> StorageDevice1
+        StorageSwitch2 --> StorageDevice2
+    end
 end
 
-SpineLanSwitch1 --> ServerLanSwitch1
-SpineLanSwitch1 --> ServerLanSwitch2
-SpineLanSwitch2 --> ServerLanSwitch1
-SpineLanSwitch2 --> ServerLanSwitch2
-
-
-Server1 --> StorageSwitch1
-Server1 --> StorageSwitch2
-Server2 --> StorageSwitch1
-Server2 --> StorageSwitch2
-Server3 --> StorageSwitch1
-Server3 --> StorageSwitch2
-
-subgraph Storage[Storage Zone]
-    StorageSwitch1[Storage Switch 1]
-    StorageSwitch2[Storage Switch 2]
-    StorageDevice1[Storage Device 1]
-    StorageDevice2[Storage Device 2]
-    StorageSwitch1 --> StorageDevice1
-    StorageSwitch1 --> StorageDevice2
-    StorageSwitch2 --> StorageDevice1
-    StorageSwitch2 --> StorageDevice2
-end
-
-subgraph EUC[Coporate User Zone]
+subgraph EUC[Corporate User Offices]
     EUCLeafSwitch1[Primary EUC Leaf Switch]
     EUCLeafSwitch2[Secondary EUC Leaf Switch]
     WiFiAP1[Wifi Access Point 1]
