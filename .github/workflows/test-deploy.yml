@@ -12,6 +12,9 @@ jobs:
   test-deploy:
     name: Test Deployment
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./opendocs
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3.0.0
