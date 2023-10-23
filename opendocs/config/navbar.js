@@ -8,6 +8,11 @@ const navbar = {
   },
   items: [
     {
+      to: '/docs',
+      label: 'Guides',
+      position: 'left',
+    },
+    {
       to: '/general/community/mission',
       position: 'left',
       label: 'Community',
