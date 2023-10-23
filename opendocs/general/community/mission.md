@@ -17,20 +17,20 @@ Our goals for the future are simple
 
 ## Our Values
 
-These are the values that we encourage eachother to uphold, for the good of the businesses we serve and each other:
+These are the values that we encourage each other to uphold, for the good of the businesses we serve and each other:
 
-* Respect
+- Respect
 
-  We treat everyone with respect and sensitivty, recognising the importance of their contributions: team members, partners, customers, competitors, and the community.
+  We treat everyone with respect and sensitivity, recognising the importance of their contributions: team members, partners, customers, competitors, and the community.
 
-* Integrity
+- Integrity
 
   We employ the highest ethical standards, demonstrating honesty and fairness in every action that we take.
 
-* Openness
+- Openness
 
   Our goals, our tools, our processes and our results shall be open as much as practical. Our team members are encouraged to speak openly and communicate freely both internally and externally
 
-* Innovation
+- Innovation
 
   We encourage a culture of experimentation and research, where entrepreneurship and prudent risk-taking are encouraged, rewarded, and incorporated

@@ -23,5 +23,4 @@ Firewall2 --> LanSwitch
 LanSwitch --> Server1
 LanSwitch --> Server2
 LanSwitch --> Server3
-
 ```
