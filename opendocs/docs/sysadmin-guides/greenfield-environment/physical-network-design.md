@@ -19,11 +19,13 @@ Firewall[Firewall / Router]
 LanSwitch[Lan Switch]
 Server[Server]
 EndUserCompute[Business Workstation]
+WifiAP[Wifi Access Point]
 
 WAN --> Firewall
 Firewall --> LanSwitch
 LanSwitch --> Server
 LanSwitch --> EndUserCompute
+LanSwitch --> WifiAP
 ```
 
 ## A typical High Availability Design
@@ -45,55 +47,112 @@ It's rare for switches to fail, but it does happen.
 
 Finally, we have our servers, which in this example are clustered with a shared storage device. If a single server needs to reboot for updates, the services it operates can be migrated to another server in the cluster, and the server can be rebooted without any business-facing downtime.
 
-It's clear from the diagram below that a high availability configuration introduces a lot of additional complexity and cost, however the benefits are worth it for most businesses.
+For the sake of simplicity, we have not included a backup solution in this diagram, nor any replication links between like-for-like devices, however it is highly recommended that a backup solution is implemented.
+
+It's clear from the diagram below that a high availability configuration introduces a lot of additional complexity and cost, however the benefits are worth it for most businesses. Typically High Availability is implemented in line with the business' risk vectors, appetite, and availability targets.
 
 ```mermaid
 
 graph TD
 
-WAN1[Primary Internet Connection Modem]
-WAN2[Secondary Internet Connection Modem]
-WanSwitch1[Primary WAN Switch]
-WanSwitch2[Secondary WAN Switch]
-Firewall1[Firewall / Router 1]
-Firewall2[Firewall / Router 2]
-LanSwitch1[Primary LAN Switch]
-LanSwitch2[Secondary LAN Switch]
+subgraph WAN[Wan Zone]
+    WAN1[Primary Internet Connection Modem]
+    WAN2[Secondary Internet Connection Modem]
+    WanSwitch1[Primary WAN Leaf Switch]
+    WanSwitch2[Secondary WAN Leaf Switch]
+end
 
 WAN1 --> WanSwitch1
 WAN2 --> WanSwitch2
+
+subgraph Edge[Edge Zone]
+    Firewall1[Firewall / Router 1]
+    Firewall2[Firewall / Router 2]
+    EdgeLeafSwitch1[Primary Edge Leaf Switch]
+    EdgeLeafSwitch2[Secondary Edge Leaf Switch]
+
+    Firewall1 --> EdgeLeafSwitch1
+    Firewall1 --> EdgeLeafSwitch2
+    Firewall2 --> EdgeLeafSwitch1
+    Firewall2 --> EdgeLeafSwitch2
+end
+
 WanSwitch1 --> Firewall1
 WanSwitch1 --> Firewall2
 WanSwitch2 --> Firewall1
 WanSwitch2 --> Firewall2
-Firewall1 --> LanSwitch1
-Firewall1 --> LanSwitch2
-Firewall2 --> LanSwitch1
-Firewall2 --> LanSwitch2
-LanSwitch1 --> Server1
-LanSwitch1 --> Server2
-LanSwitch1 --> Server3
-LanSwitch2 --> Server1
-LanSwitch2 --> Server2
-LanSwitch2 --> Server3
 
-subgraph Compute
+subgraph Spine[Network Spine]
+    SpineLanSwitch1[Primary Spine Leaf Switch]
+    SpineLanSwitch2[Secondary Spine Leaf Switch]
+end
+
+EdgeLeafSwitch1 --> SpineLanSwitch1
+EdgeLeafSwitch1 --> SpineLanSwitch2
+EdgeLeafSwitch2 --> SpineLanSwitch1
+EdgeLeafSwitch2 --> SpineLanSwitch2
+
+
+subgraph Server[Server Zone]
+    ServerLanSwitch1[Primary Server Leaf Switch]
+    ServerLanSwitch2[Secondary Server Leaf Switch]
     Server1[Server 1]
     Server2[Server 2]
     Server3[Server 3]
+    ServerLanSwitch1 --> Server1
+    ServerLanSwitch1 --> Server2
+    ServerLanSwitch1 --> Server3
+    ServerLanSwitch2 --> Server1
+    ServerLanSwitch2 --> Server2
+    ServerLanSwitch2 --> Server3
 end
 
-Server1 --> StorageDevice1
-Server2 --> StorageDevice2
-Server3 --> StorageDevice1
+SpineLanSwitch1 --> ServerLanSwitch1
+SpineLanSwitch1 --> ServerLanSwitch2
+SpineLanSwitch2 --> ServerLanSwitch1
+SpineLanSwitch2 --> ServerLanSwitch2
 
-subgraph Storage
 
-    direction LR
+Server1 --> StorageSwitch1
+Server1 --> StorageSwitch2
+Server2 --> StorageSwitch1
+Server2 --> StorageSwitch2
+Server3 --> StorageSwitch1
+Server3 --> StorageSwitch2
+
+subgraph Storage[Storage Zone]
+    StorageSwitch1[Storage Switch 1]
+    StorageSwitch2[Storage Switch 2]
     StorageDevice1[Storage Device 1]
     StorageDevice2[Storage Device 2]
+    StorageSwitch1 --> StorageDevice1
+    StorageSwitch1 --> StorageDevice2
+    StorageSwitch2 --> StorageDevice1
+    StorageSwitch2 --> StorageDevice2
 end
 
-StorageDevice1 <--Replication--> StorageDevice2
+subgraph EUC[Coporate User Zone]
+    EUCLeafSwitch1[Primary EUC Leaf Switch]
+    EUCLeafSwitch2[Secondary EUC Leaf Switch]
+    WiFiAP1[Wifi Access Point 1]
+    WiFiAP2[Wifi Access Point 2]
+    EUC1[Corporate User 1]
+    EUC2[Corporate User 2]
+    EUC3[Corporate User 3]
+    EUC4[Corporate User 4]
+    EUC5[Corporate User 5]
+    EUCLeafSwitch1 --> WiFiAP1
+    EUCLeafSwitch2 --> WiFiAP2
+    EUCLeafSwitch1 --> EUC1
+    EUCLeafSwitch2 --> EUC2
+    EUCLeafSwitch2 --> EUC3
+    WiFiAP1 --> EUC4
+    WiFiAP2 --> EUC5
+end
+
+SpineLanSwitch1 --> EUCLeafSwitch1
+SpineLanSwitch1 --> EUCLeafSwitch2
+SpineLanSwitch2 --> EUCLeafSwitch1
+SpineLanSwitch2 --> EUCLeafSwitch2
 
 ```
