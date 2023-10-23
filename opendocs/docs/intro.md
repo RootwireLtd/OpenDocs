@@ -13,6 +13,7 @@ This documentation includes a range of useful guides and information.
 
 :::tip Where to start
 
-- Look through our [guides]
+- Look through our [Guides](/docs)
+- Check out our [Mission](/general/community/mission)
 
 :::
