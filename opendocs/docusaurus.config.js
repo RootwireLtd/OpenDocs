@@ -7,15 +7,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 require('dotenv').config();
 
 
-const getBaseUrl = () => {
-  if (process.env.NETLIFY) {
-      // Netlify hosts on '/', always.
-      return '/';
+const getBaseUrl = () =>
+{
+  if (process.env.NETLIFY)
+  {
+    // Netlify hosts on '/', always.
+    return '/';
   }
 
-  if (typeof process.env.BASEURL !== 'undefined') {
-      // Respect the env.
-      return process.env.BASEURL;
+  if (typeof process.env.BASEURL !== 'undefined')
+  {
+    // Respect the env.
+    return process.env.BASEURL;
   }
 
   // Default is currently '/opendocs'.
@@ -34,7 +37,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: getBaseUrl(),
   trailingSlash: false,
-  
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'rootwire', // Usually your GitHub org/user name.
@@ -80,6 +83,22 @@ const config = {
       footer: require('./config/footer.js'),
       prism: require('./config/prism.js'),
     }),
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'general',
+        path: 'general',
+        routeBasePath: 'general',
+        sidebarPath: require.resolve('./sidebars/general.js'),
+        editUrl: 'https://github.com/rootwire/opendocs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        remarkPlugins: [],
+        editCurrentVersion: true,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
