@@ -3,6 +3,10 @@ name: "CI - Lint on push"
 on:
   push:
 
+concurrency:
+  group: "lint"
+  cancel-in-progress: true
+
 jobs:
   docs:
     runs-on: ubuntu-latest
