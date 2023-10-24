@@ -15,12 +15,18 @@ const config = {
     'softwareTerms',
     'companies',
     'lorem-ipsum',
-    'rootwire-words'
+    'rootwire-words',
+    'people-names'
   ],
   dictionaryDefinitions: [
     {
       name: 'rootwire-words',
       path: './data/rootwire-words.txt',
+      noSuggest: true,
+    },
+    {
+      name: 'people-names',
+      path: './data/people-names.txt',
       noSuggest: true,
     },
   ],
