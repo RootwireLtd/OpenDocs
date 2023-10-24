@@ -15,5 +15,5 @@ This documentation includes a range of useful guides and information.
 
 - Look through our [Guides](/docs)
 - Check out our [Mission](/general/community/mission)
-
+- Learn how to [Contribute](/general/community/contributing)
 :::
