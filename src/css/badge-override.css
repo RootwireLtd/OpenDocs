@@ -1,0 +1,47 @@
+.highlight {
+    border-radius: 2px;
+    color: #fff;
+    padding: 0.2rem;
+}
+
+.windows {
+    background-color: #00a2ed;
+}
+
+.linux-ubuntu {
+    background-color: #E95420;
+}
+
+.linux-rhel {
+    background-color: #ee0000;
+}
+
+.beta {
+    background-color: #003a70;
+}
+
+.docker {
+    background-color: #1993ef;
+}
+
+/* Support FW table style */
+
+#table-fw tr:nth-child(even) {
+    background: transparent;
+}
+
+#table-fw tbody:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+#table-fw tbody:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+html[data-theme="dark"] #table-fw tbody:nth-child(even) {
+    background-color: #595858;
+}
+
+html[data-theme="dark"] #table-fw tbody:nth-child(odd) {
+    background-color: #000000;
+}
