@@ -16,7 +16,8 @@ const config = {
     'companies',
     'lorem-ipsum',
     'rootwire-words',
-    'people-names'
+    'people-names',
+    'tech-and-tool-words'
   ],
   dictionaryDefinitions: [
     {
@@ -27,6 +28,11 @@ const config = {
     {
       name: 'people-names',
       path: './data/people-names.txt',
+      noSuggest: true,
+    },
+    {
+      name: 'tech-and-tool-words',
+      path: './data/tech-and-tool-words.txt',
       noSuggest: true,
     },
   ],
