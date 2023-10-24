@@ -66,7 +66,6 @@ $ tree
 3 directories, 3 files
 ```
 
-
 </td>
 <td>
 
