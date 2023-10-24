@@ -21,5 +21,5 @@ mv: cannot move `.' to `../.': Device or resource busy
 The following command will move all files, including hidden files in the current directory to the parent directory
 
 ```powershell
-Get-ChildItem -Path . -Depth 0 | move-item -Destination ..
+Get-ChildItem -Path . -Depth 0 | Move-Item -Destination ..
 ```
