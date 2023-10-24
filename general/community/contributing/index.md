@@ -6,9 +6,9 @@ sidebar_label: Overview
 
 Thank you for your interest in making this project even better! Your contributions are highly welcomed
 
-The Rootwire `opendocs` repo is an opensource project, we are excited to engage with you and the community.
+The Rootwire `OpenDocs` repo is an open source project, we are excited to engage with you and the community.
 
-Contribution can come in many forms: Writing examples, making suggestions, pointing out bugs and issues, or updating documentation. Most important is your patience and engagement. We are starting a signficant journey in the open instead of behind closed doors. Join us and make something great!
+Contribution can come in many forms: Writing examples, making suggestions, pointing out bugs and issues, or updating documentation. Most important is your patience and engagement. We are starting a significant journey in the open instead of behind closed doors. Join us and make something great!
 
 ## Reporting Bugs
 
@@ -21,7 +21,7 @@ Please fill out the required information. Be clear, specific, and add working ex
 
 We have a lot of ideas and I'm sure you do too. Please use our [issues list](https://github.com/RootwireLtd/OpenDocs/issues) to suggest new features and documentation you would like to see added.
 
-Once again, detail wins. Be clear and outcome oriented in your requests - it makes it easier for us to evaluate, priortise, and get it right.
+Once again, detail wins. Be clear and outcome oriented in your requests - it makes it easier for us to evaluate, prioritise, and get it right.
 
 ## Contribute to the Repo
 
@@ -72,7 +72,7 @@ Bug fixes and features should have tests. Please validate documentation you subm
 
 ### Step 4. Submit a Pull Request
 
-Push your changes to a topic branch in your fork of the repository. Submit a pull request to the [OpenDocs](https://github.com/RootwireLtd/OpenDocs/) repository. Make sure your PR has a clear description of the problem / outcome you are addressing and how you are approaching it. 
+Push your changes to a topic branch in your fork of the repository. Submit a pull request to the [OpenDocs](https://github.com/RootwireLtd/OpenDocs/) repository. Make sure your PR has a clear description of the problem / outcome you are addressing and how you are approaching it.
 
 For help, you can refer to [submitting a pull request](https://help.github.com/articles/using-pull-requests)
 

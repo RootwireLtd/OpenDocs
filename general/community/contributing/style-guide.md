@@ -275,9 +275,11 @@ to specify which language you are using, and it's a good idea to include a title
 </td>
       <td>
 
-    ```powershell title="Custom Title"
-    Get-ChildItem -Recurse
-    ```
+````markdown
+```powershell title="Custom Title"
+Get-ChildItem -Recurse
+```
+````
 
 </td>
 </tr>
