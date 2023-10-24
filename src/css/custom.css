@@ -32,6 +32,12 @@
 @import "./variables/colours.modules.css";
 @import "./badge-override.css";
 
+/* Main config */
+
+table.code td:last-child {
+  width: 100%;
+}
+
 /* Hub and introduction page CSS below */
 
 .box-wrapper {
