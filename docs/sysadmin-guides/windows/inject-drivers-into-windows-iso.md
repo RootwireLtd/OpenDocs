@@ -8,7 +8,7 @@ Some systems have hardware that isn't automatically recognised by Windows. While
 You will require:
 
 - A Windows installation ISO
-  - For this demonstration we will use [Windows Server 2022 Evalulation ISO](https://www.microsoft.com/en-gb/evalcenter/download-windows-server-2022)
+  - For this demonstration we will use [Windows Server 2022 Evaluation ISO](https://www.microsoft.com/en-gb/evalcenter/download-windows-server-2022)
 - [The Deployment and Imaging Tools toolkit](https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install)
 
 ## 01. Preparation
@@ -17,7 +17,7 @@ We will create a folder for our workspace at `C:\WinImg`
 
 Under `C:\WinImg` create four folders:
 
-- `Drivers` - this is where we'll put the drivres we want to install
+- `Drivers` - this is where we'll put the drivers we want to install
 - `Mount` - this is where we'll mount the install.wim
 - `ISO` - this is where we'll extract the Windows ISO
 - `Export` - this is where we'll save our custom ISO
@@ -139,7 +139,6 @@ The operation completed successfully.
 
 </details>
 
-
 ## 05. Commit changes and dismount the image
 
 We can now dismount and commit the changes to the image - wait a few moments for the changes to save and the image to dismount.
@@ -173,16 +172,17 @@ Next, enter the following command - adapting to suit your needs
 ```dos
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bC:\WinImg\ISO\boot\etfsboot.com#pEF,e,bC:\WinImg\ISO\efi\microsoft\boot\efisys.bin C:\WinImg\ISO C:\WinImg\Export\CustomISO.iso
 ```
+
 [Review the Microsoft Documentation for OSCDIMG for more details](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/oscdimg-command-line-options?view=windows-11)
 
 The parameters in use above are:
 
 - `-m` ignores the maximum size limit of an image.
 - `-o` uses a MD5 hashing algorithm to compare files.
-- `-u2` produces an image that contains a UDF image only 
+- `-u2` produces an image that contains a UDF image only
 - `-udfver102` specifies the udf version of 1.02
-- `-bootdata:2#p0,e,b` specifies a multiboot image with 2 boot entries. The first targets BIOS 
-  - followed by `C:\WinImg\ISO\boot\etfsboot.com` which is the path to etfsboot.com 
+- `-bootdata:2#p0,e,b` specifies a multiboot image with 2 boot entries. The first targets BIOS
+  - followed by `C:\WinImg\ISO\boot\etfsboot.com` which is the path to etfsboot.com
   - followed by `#pEF,e,b` The second multiboot entry targets UEFI
   - followed by `C:\WinImg\ISO\efi\microsoft\boot\efisys.bin` which is the path to efisys.bin
 - `C:\WinImg\ISO` which is the path containing the source ISO files
@@ -224,5 +224,3 @@ Done.
 ```
 
 </details>
-
-
