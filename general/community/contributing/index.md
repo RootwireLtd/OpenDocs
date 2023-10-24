@@ -1,7 +1,7 @@
 ---
 id: contributing
 title: Contributing
-sidebar_label: Overview
+sidebar_label: Contributing
 ---
 
 Thank you for your interest in making this project even better! Your contributions are highly welcomed
