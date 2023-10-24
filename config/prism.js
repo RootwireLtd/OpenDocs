@@ -7,6 +7,7 @@ const prism = {
   darkTheme: darkCodeTheme,
   additionalLanguages: [
     'gherkin',
+    'powershell',
   ]
 };
 
