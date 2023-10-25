@@ -1,13 +1,16 @@
-# This file contains cspell exceptions relating to Rootwire terms
 # Keep this file sorted alphabetically
+# This file contains cspell exceptions relating to Rootwire terms
 bootdata
-DISM
+computername
 Datacenter
 Datacentre
+DISM
+dsget
+dsquery
 efisys
 etfsboot
 Frontmatter
 multiboot
 OSCDIMG
+samid
 udfver
-
