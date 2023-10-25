@@ -112,7 +112,7 @@ RestartNeeded : False
 Once the image has been mounted, we can now add drivers from the Drivers directory.
 I favour `DISM` over `Add-WindowsDriver` here as it is more explicit about the success or failure of the operation. Feel free to use `Add-WindowsDriver` if you prefer
 
-```powershell title="powershell (elevated)
+```powershell title="powershell (elevated)"
 dism /image:C:\WinImg\Mount /Add-Driver /Driver:C:\WinImg\Drivers\ /Recurse
 ```
 
@@ -169,7 +169,7 @@ Once in the prompt, run `cd c:\` to change to the root of C:\
 
 Next, enter the following command - adapting to suit your needs
 
-```dos
+```dos title="Deployment and Imaging Tools Environment CMD"
 oscdimg.exe -m -o -u2 -udfver102 -bootdata:2#p0,e,bC:\WinImg\ISO\boot\etfsboot.com#pEF,e,bC:\WinImg\ISO\efi\microsoft\boot\efisys.bin C:\WinImg\ISO C:\WinImg\Export\CustomISO.iso
 ```
 
