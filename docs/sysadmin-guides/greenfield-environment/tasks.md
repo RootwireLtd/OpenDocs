@@ -63,6 +63,9 @@ For this checklist, we will assume a mixed Windows and Linux based business envi
 - [ ] Provision Domain / LDAP
   - [ ] Configure OU structure
   - [ ] Configure AD Groups and Delegations
+  - [ ] Configure Default Computer container (redircmp)
+  - [ ] Configure Auth and AD Auditing in Default Domain Controllers Policy GPO
+  - [ ] Restrict ms-DS-MachineAccountQuota to 0
   - [ ] Empty default AD Administrative groups
     - [ ] Administrators (Leave only dedicated highly restricted accounts)
     - [ ] Domain Admins (Leave only dedicated highly restricted accounts)
