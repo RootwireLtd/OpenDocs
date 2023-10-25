@@ -6,12 +6,24 @@ tags: [os:windows, active directory, identity & role management, PowerShell]
 
 ## Overview
 
-|                  |                                                     |
-| ---------------- | --------------------------------------------------- |
-| Solution Type    | Script                                              |
-| Features / Tools | Powershell, [ActiveDirectory Module][psAdModule]                                          |
-| Summary          | Enumerate the group memberships for a user or group |
-| Benefits         | Answers "What groups does ____ belong to?"          |
+### Summary
+
+Enumerate the group memberships for a user or group
+
+### Features / Tools
+
+- Active Directory
+- CMD
+- DSGet
+- DSQuery
+- Powershell
+- [ActiveDirectory Module][psAdModule]
+
+### Benefits
+
+- Answer "Which groups does ____ belong to?"
+
+## Guidance
 
 ### Current Logged in User
 
