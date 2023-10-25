@@ -8,7 +8,7 @@ tags: [os:windows, active directory, identity & role management, PowerShell]
 
 ### Summary
 
-Enumerate the group memberships for a user or group
+Enumerate the group memberships for a user or computer
 
 ### Features / Tools
 
