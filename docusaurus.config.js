@@ -27,7 +27,7 @@ const getBaseUrl = () =>
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Rootwire',
+  title: 'Rootwire OpenDocs',
   tagline: 'Rootwire Resources',
   favicon: 'img/favicon.ico',
 

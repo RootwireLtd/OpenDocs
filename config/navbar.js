@@ -1,5 +1,5 @@
 const navbar = {
-  title: 'Rootwire',
+  title: 'Rootwire OpenDocs',
   logo: {
     alt: 'Rootwire Logo',
     src: 'img/logo.svg',
