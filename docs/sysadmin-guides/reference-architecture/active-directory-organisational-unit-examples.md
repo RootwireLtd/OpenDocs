@@ -29,9 +29,9 @@ vs
     - London (London Office Location)
 ```
 
-## Representative OU Hierarchy
+## Representative Corporate OU Hierarchy
 
-Below is an example of a well structured OU Hierarchy
+Below is an example of a well structured OU Hierarchy for a corporate domain
 
 ```null title="AD OU Hierarchy"
 - CORP (Corporate Facing Objects)
@@ -46,57 +46,105 @@ Below is an example of a well structured OU Hierarchy
       - DT (Desktops)
       - MP (MobilePhones)
       - TB (Tablets)
-    - REM (Renote / Non-office based)
+    - REM (Remote / Non-office based)
   - Users
     - LON (London)
     - BMT (Bournemouth)
     - EXT (External / 3rd Party)
-    - REM (Renote / Non-office based)
+    - REM (Remote / Non-office based)
   - Groups
     - JobTitles
     - Roles
-  - Departmental Resources
+  - Departments
     - Common
-      - FileShares
-        - OrgPolicies
-          - ACLs
-      - Applications
-        - EmployeePortal
-          - ACLs
+      - Groups
+        - JobTitles (Could be delegated to HR)
+        - Roles
+      - Resources
+        - FileShares
+          - OrgPolicies
+            - ACLs
+        - Applications
+          - EmployeePortal
+            - ACLs
     - Finance
-      - FileShares
-        - Accounts
-          - ACLs
-      - Apps
-        - AccountingSoftware
-          - ACLs
+      - Groups
+        - Roles (Departmental roles like Accounts Payable / Accounts Receivable)
+      - Resources
+        - FileShares
+          - Accounts
+            - ACLs
+        - Apps
+          - AccountingSoftware
+            - ACLs
     - IT
-      - FileShares
-        - IT
-          - ACLs
-      - Apps
-        - Helpdesk
-          - ACLs
+      - Groups
+        - Roles (Departmental roles like Documentation Contributor / Helpdesk Auditor)
+      - Resources
+        - FileShares
+          - SoftwareLibrary
+            - ACLs
+        - Apps
+          - Helpdesk
+            - ACLs (EG: Read Ticket / Update Ticket)
 - STAGING (New Users and Computers)
   - New Users
   - New Computers
 - SYS (System Administrative Facing Objects)
   - Admins
-    - T0 (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative access)
-    - T1 (Tier 1 / Administrative Access over servers or groups of servers)
-    - T2 (Tier 2 / Administrative Access over workstations or groups of workstations)
-    - T3 (Tier 3 / Administrative Access over applications or groups of applications)
+    - Corp (Administrative Accounts for working with the Corporate Domain)
+      - T0C (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative access)
+      - T1C (Tier 1 / Administrative Access over Corporate servers or groups of servers)
+      - T2C (Tier 2 / Administrative Access over Corporate workstations or groups of workstations)
+      - T3C (Tier 3 / Administrative Access over Corporate applications or groups of applications)
+    - DMZ (Separate Administrative accounts for working with the DMZ Domain)
+      - T0D (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative)
+      - T1D (Tier 1 / Administrative Access over DMZ servers or groups of servers)
+      - T2D (Tier 2 / Administrative Access over DMZ workstations or groups of workstations)
+      - T3D (Tier 3 / Administrative Access over DMZ applications or groups of applications)
   - Groups
     - Roles
     - ACLs
     - AdDelegation (Active Directory Delegation)
+  - Departmental Resources
+    - Common
+      - Servers
+    - Infrastructure
+      - Servers
+        - Hypervisors
+    - Supply
+      - Servers
+        - Monitoring Database
+        - Monitoring Application
+        - Logging Database
+        - Logging Application
+    - Virtualisation Team
+      - Servers
+        - Hypervisors
   - Servers
-    - Application
-    - Database
-    - Exchange
-    - File Servers
-    - Hypervisor
     - NonProduction
-    - Web
+    - Infrastructure
+      - Hypervisors
+    - Supply
+      - Monitoring Database
+      - Monitoring Application
+      - Logging Database
+      - Logging Application
+      - Mail Database
+      - Mail Server
+      - Mail Relay
+    - Corporate
+      - File Servers
+      - LineOfBusiness Database
+      - LineOfBusiness Web Application
 ```
 
+## Representative DMZ Domain OU Hierarchy
+
+A Domain that has resources facing the public internet has a higher risk of compromise, therefore, resources that will be internet facing are better placed in to their own separate DMZ Domain
+
+The DMZ Domain should primarily contain resources, with minimal user accounts.
+
+```null title="AD OU Hierarchy"
+
+```
