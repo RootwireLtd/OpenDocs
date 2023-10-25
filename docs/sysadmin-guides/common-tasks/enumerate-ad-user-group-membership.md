@@ -13,7 +13,6 @@ tags: [os:windows, active directory, identity & role management, PowerShell]
 | Summary          | Enumerate the group memberships for a user or group |
 | Benefits         | Answers "What groups does ____ belong to?"          |
 
-
 ### Current Logged in User
 
 ```powershell title="PowerShell"
@@ -25,6 +24,10 @@ Get-ADPrincipalGroupMembership -Identity $env:USERNAME | select DistinguishedNam
 ```powershell title="PowerShell"
 $identity = "john.doe" # Replace with users samAccountName
 Get-ADPrincipalGroupMembership -Identity $identity | select DistinguishedName
+```
+
+```dos title="CMD"
+dsquery user -samid john.doe | dsget user -memberof -expand
 ```
 
 ### Current Computer
@@ -41,6 +44,13 @@ $computerName = "Desktop-1234"
 # Computer samAccountNames end in a $, so this must be appended
 $samAccountName = $computerName + "$"
 Get-ADPrincipalGroupMembership -Identity $samAccountName | select DistinguishedName
+```
+
+Note we do not append `$` to the computer name for dsquery
+
+```dos title="CMD"
+dsquery computer -name Desktop1234 | dsget computer -memberof -expand
+dsquery computer -name Desktop1234 | dsget computer -memberof -expand
 ```
 
 [psAdModule]: https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps
