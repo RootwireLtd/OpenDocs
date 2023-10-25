@@ -34,7 +34,8 @@ At the top of each docs page, you need to include these things:
 | `title`                  | The main title of the page. This value will automatically be rendered using the H1 style at the top of the page.               |
 | `sidebar_label`          | This is what will appear in the left hand navigation tree for the page.                                                        |
 | `description` (optional) | This is what appears when the page is referenced in a Google search result.                                                    |
-| `keywords` (optional)    | A list of terms that help categorize the page for SEO purposes.                                                                |
+| `keywords` (optional)    | A list of terms that help categorise the page for SEO purposes.                                                                |
+| `tags` (optional)        | A list of terms that help categorise within the site - use lowercase |
 
 It looks like this in the document:
 
@@ -45,6 +46,10 @@ title: Style Guide Introduction
 sidebar_label: Style Guide
 description: The Rootwire OpenDocs Documentation Style Guide
 keywords:
+- contributing
+- style
+- markdown
+tags:
 - contributing
 - style
 - markdown

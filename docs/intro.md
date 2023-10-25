@@ -4,7 +4,7 @@ title: Introduction
 description: Open documentation for Rootwire
 slug: /
 tags:
-  - Getting started
+  - getting started
 ---
 
 Welcome to the Open Documentation for Rootwire
