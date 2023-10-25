@@ -34,13 +34,15 @@ For this checklist, we will assume a mixed Windows and Linux based business envi
 - [ ] Provision Physical Servers
 
 ## Provision Administrative Network
+
 - [ ] Create the Administrative Out-Of-Band Networks
   - [ ] OOB Administrative Access
-  - [ ] OOB Network Device Management 
+  - [ ] OOB Network Device Management
   - [ ] OOB Storage Device Management
   - [ ] OOB Physical Server Management
 
 ## Provision Virtualisation Infrastructure
+
 - [ ] Create the logical Virtualisation Networks
   - [ ] Hypervisor Application Tier
 - [ ] Provision Logical Storage Volumes
@@ -75,7 +77,6 @@ For this checklist, we will assume a mixed Windows and Linux based business envi
     - [ ] Backup Operators
     - [ ] Schema Admins (Add users only when schema changes are required, then remove)
     - [ ] Cert Publishers
-    
 - [ ] Provision Identity Provider
   - [ ] Ms Entra / Okta / KeyCloak / etc
   - [ ] Integrate with Domain / LDAP
@@ -94,4 +95,3 @@ For this checklist, we will assume a mixed Windows and Linux based business envi
   - [ ] Common Resources Namespace
     - [ ] Software
     - [ ] Policy Documents
-    - [ ] 

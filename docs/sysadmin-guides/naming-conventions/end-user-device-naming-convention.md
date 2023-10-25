@@ -18,9 +18,9 @@ Most systems have an asset tag or serial number, which satisfies requirements 1-
 
 Many that have a serial number expose it through the BIOS or UEFI, satisfying requirement 5
 
-Most systems have no easy way to determine requirement 6 programatically - which leads to a manual requirement. We therefore prefix a letter to the system name
+Most systems have no easy way to determine requirement 6 programmatically - which leads to a manual requirement. We therefore prefix a letter to the system name
 
-| Preix | Device Type         |
+| Prefix | Device Type         |
 | ----- | ------------------- |
 | `D`   | Desktop/Workstation |
 | `L`   | Laptop              |

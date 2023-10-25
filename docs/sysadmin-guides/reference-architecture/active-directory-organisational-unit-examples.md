@@ -9,14 +9,14 @@ OU hierarchy should be structured to facilitate ease of administration, then ref
 
 ### For example:
 
-Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for propagation. However, Group Policies can also be scoped to security groups. 
+Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for propagation. However, Group Policies can also be scoped to security groups.
 
 In the below example, users at the London office might be assigned delegated permissions over the scope London OU in order to manage their own devices.
-IT Support Technicians are more likely to be assigned delegated rights over the whole Clients scope. 
+IT Support Technicians are more likely to be assigned delegated rights over the whole Clients scope.
 In `Example B` it would not be possible to easily delegate device management permissions to specific site office users, therefore, in this example `Example A` below is the more optimal choice.
 
 ```null title="Example A"
-- Clents
+- Clients
   - London (London Office Location)
     - Laptops (Laptops Devices)
 ```
