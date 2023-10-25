@@ -1,7 +1,7 @@
 ---
 title: Enumerate Active Directory User and Computer group membership
 sidebar_label: Enumerate AD User and Computer group membership
-tags: [os:windows, active directory, identity & role management, PowerShell]
+tags: [os:windows, active directory, identity & role management, powershell]
 ---
 
 ## Overview
