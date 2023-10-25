@@ -8,9 +8,14 @@ DISM
 dsget
 dsquery
 efisys
+entra
 etfsboot
 Frontmatter
+helpdesk
 multiboot
 OSCDIMG
+redircmp
+routable
 samid
+subnetting
 udfver
