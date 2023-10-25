@@ -125,18 +125,22 @@ Below is an example of a well structured OU Hierarchy for a corporate domain
     - NonProduction
     - Infrastructure
       - Hypervisors
-    - Supply
+    - Supply (Provides common services to Corporate systems)
+      - Internal DNS Server
       - Monitoring Database
       - Monitoring Application
       - Logging Database
       - Logging Application
       - Mail Database
       - Mail Server
-      - Mail Relay
-    - Corporate
+      - Mail Relay (Internal Mail Relay)
+    - Corporate (Provides services to the internal corporate business users and systems)
       - File Servers
       - LineOfBusiness Database
       - LineOfBusiness Web Application
+    - Production (Provides services to external customers)
+      - Widget Database
+      - Widget Application Server
 ```
 
 ## Representative DMZ Domain OU Hierarchy
@@ -147,4 +151,25 @@ The DMZ Domain should primarily contain resources, with minimal user accounts.
 
 ```null title="AD OU Hierarchy"
 
+- STAGING (New Users and Computers)
+  - New Users
+  - New Computers
+- SYS (System Administrative Facing Objects)
+  - Servers
+    - Supply (Provides common services to Corporate systems)
+      - External DNS Server
+      - Mail Gateway
+      - NTP Server
+      - Mail Relay (Outbound Mail Relay)
+    - Corporate (Provides services to the internal corporate business users and systems)
+      - VPN Server
+      - WAF (Web Application Firewall)
+      - Reverse Proxy (Reverse Proxy / Http Gateway)
+      - Load Balancer (Load Balancer)
+    - Production (Provides services to external customers)
+      - External DNS Sever 
+      - Reverse Proxy (Production outbound traffic)
+      - WAF (Web Application Firewall)
+      - NoSQL Cache
+      - Widget Web App
 ```
