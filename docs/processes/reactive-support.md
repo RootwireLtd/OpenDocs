@@ -1,5 +1,8 @@
 ---
 title: Reactive Support Process
+tags:
+- processes
+- service desk
 ---
 
 ```mermaid
@@ -76,8 +79,4 @@ TicketGeneratedByEmail --> TriageTicket
 
 Alert --> TicketGeneratedByAlert
 TicketGeneratedByAlert --> TriageTicket
-
-
-
-
 ```
