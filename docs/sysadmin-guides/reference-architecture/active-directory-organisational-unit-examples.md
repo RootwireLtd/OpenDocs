@@ -1,6 +1,9 @@
 ---
 title: Active Directory Organisational Unit Hierarchy examples
 sidebar_label: AD OU Hierarchy examples
+tags:
+- active directory
+- os:windows
 ---
 
 ## Naming Structure
