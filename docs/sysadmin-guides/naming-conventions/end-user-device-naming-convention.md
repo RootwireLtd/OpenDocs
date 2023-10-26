@@ -3,6 +3,7 @@ title: Naming Convention - End User Devices
 sidebar_label: End User Devices
 tags: 
 - naming convention
+- end user compute
 ---
 
 Naming conventions for client computers, laptops, desktops, and phones should meet the following requirements
@@ -22,11 +23,11 @@ Most systems have no easy way to determine requirement 6 programmatically - whic
 
 | Prefix | Device Type         |
 | ----- | ------------------- |
-| `D`   | Desktop/Workstation |
-| `L`   | Laptop              |
-| `T`   | Tablet              |
-| `M`   | Mobile Phone        |
-| `U`   | Unknown / Undefined |
+| **D**   | Desktop / Workstation |
+| **L**   | Laptop              |
+| **T**   | Tablet              |
+| **M**   | Mobile Phone        |
+| **U**   | Unknown / Undefined |
 
 For a laptop with serial number `XYZ0123` - this results in `L-XYZ0123`
 Where the serial number is exposed through the BIOS, this element of the system name can be generated automatically.
