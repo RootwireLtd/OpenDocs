@@ -39,7 +39,6 @@ vs
     - London (London Office Location)
 ```
 
-
 Take for example users at Refurbalot's London office, who routinely buy laptops, refurbish them, use them as their daily workstation for a few days to ensure they're working well, then wipes them and sells them.
 
 In this example, users at the London office currently have to call the Helpdesk whenever they need to swap out their current workstation for the one they've just refurbished. IT Management have decided to delegate the users permission to reset their own client computers on the domain so they are able to seamlessly swap in new devices themselves.
