@@ -16,7 +16,7 @@ Finding ways to reduce users reliance on the helpdesk to accomplish IT tasks not
 
 Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management of items contained within. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for maximum potential for propagation. However, Group Policies offer their own tools for overcoming this problem - Group Policies can be scoped to security groups.
 
-### Administrative vs Configuration OU Hierarchy example.
+### Administrative vs Configuration OU Hierarchy
 
 #### Example A - Hierarchy Prioritising Administrative Category First
 
