@@ -19,3 +19,11 @@ routable
 samid
 subnetting
 udfver
+PSPKI
+Komorebi
+Workspacer
+ZLocation
+fasd
+TSQL
+PostgreSQL
+Postgres
