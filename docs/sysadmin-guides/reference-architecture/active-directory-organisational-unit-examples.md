@@ -14,9 +14,30 @@ When faced with a decision regarding how to organise OU's, always prioritise the
 
 Finding ways to reduce users reliance on the helpdesk to accomplish IT tasks not only reduces the burden on IT department time, but it also helps the business move faster and compete in the market.
 
-### For example:
-
 Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management of items contained within. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for maximum potential for propagation. However, Group Policies offer their own tools for overcoming this problem - Group Policies can be scoped to security groups.
+
+### Administrative vs Configuration OU Hierarchy example.
+
+#### Example A - Hierarchy Prioritising Administrative Category First
+
+```null title="Example A"
+- Clients
+  - London (London Office Location)
+    - Laptops (Laptops Devices)
+    - Desktops (Desktop Devices)
+```
+
+vs
+
+#### Example B - Hierarchy Prioritising Configuration Category First
+
+```null title="Example B"
+- Clients
+  - Laptops (Laptops Devices)
+    - London (London Office Location)
+  - Desktops (Desktop Devices)
+    - London (London Office Location)
+```
 
 
 Take for example users at Refurbalot's London office, who routinely buy laptops, refurbish them, use them as their daily workstation for a few days to ensure they're working well, then wipes them and sells them.
@@ -30,23 +51,6 @@ In `Example B` delegating that access would require delegation to two different 
 Conversely, in `Example A`, delegating access to the `London` scope allows the permitted user to swap in Laptops and Desktops as required. In future a `Mobile Phone` OU might be added under London, and no further administrative action is required to permit rotating mobile phones in the same way.
 
 Considering the requirements in this example, `Example A` below is the more optimal choice requiring a lower amount of initial and ongoing administrative effort from IT.
-
-```null title="Example A"
-- Clients
-  - London (London Office Location)
-    - Laptops (Laptops Devices)
-    - Desktops (Desktop Devices)
-```
-
-vs
-
-```null title="Example B"
-- Clients
-  - Laptops (Laptops Devices)
-    - London (London Office Location)
-  - Desktops (Desktop Devices)
-    - London (London Office Location)
-```
 
 ## Representative Corporate OU Hierarchy
 
