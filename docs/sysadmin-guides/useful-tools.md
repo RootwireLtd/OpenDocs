@@ -32,3 +32,8 @@ tags:
 - [SurfingKeys](https://github.com/brookhong/Surfingkeys) - Navigate the web using your keyboard
   - A comprehensive config repo is available [here](https://github.com/b0o/surfingkeys-conf)
 - [uBlock Origin](https://github.com/gorhill/uBlock) - Block adverts and maintain internet privacy
+
+## System Monitoring
+
+- [xMeters](https://entropy6.com/xmeters/download/) - Taskbar system stats for Windows 10 (Not compatible with Windows 11)
+- [SidebarDiagnostics](https://github.com/ArcadeRenegade/SidebarDiagnostics) - Sidebar system monitoring
