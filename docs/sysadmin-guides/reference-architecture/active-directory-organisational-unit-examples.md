@@ -8,20 +8,34 @@ tags:
 
 ## Naming Structure
 
-OU hierarchy should be structured to facilitate ease of administration, then referencing configuration. When faced with a decision regarding how to organise OU's, always prioritise the structure that makes administering the system easier.
+OU hierarchy should be structured to facilitate ease of long-term administration, rather then modelling around configuration. Configuration is likely to change frequently, where as a well modelled administrative-focused hierarchy is less likely to change so frequently.
+
+When faced with a decision regarding how to organise OU's, always prioritise the structure that makes administering the system easier. more efficient, and more productive.
+
+Finding ways to reduce users reliance on the helpdesk to accomplish IT tasks not only reduces the burden on IT department time, but it also helps the business move faster and compete in the market.
 
 ### For example:
 
-Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for propagation. However, Group Policies can also be scoped to security groups.
+Delegating permissions to manage Active Directory are applied to OU's, facilitating administrative management of items contained within. This conflicts with the configuration management practice of assigning Group Policies to a low-level OU for maximum potential for propagation. However, Group Policies offer their own tools for overcoming this problem - Group Policies can be scoped to security groups.
 
-In the below example, users at the London office might be assigned delegated permissions over the scope London OU in order to manage their own devices.
-IT Support Technicians are more likely to be assigned delegated rights over the whole Clients scope.
-In `Example B` it would not be possible to easily delegate device management permissions to specific site office users, therefore, in this example `Example A` below is the more optimal choice.
+
+Take for example users at Refurbalot's London office, who routinely buy laptops, refurbish them, use them as their daily workstation for a few days to ensure they're working well, then wipes them and sells them.
+
+In this example, users at the London office currently have to call the Helpdesk whenever they need to swap out their current workstation for the one they've just refurbished. IT Management have decided to delegate the users permission to reset their own client computers on the domain so they are able to seamlessly swap in new devices themselves.
+
+IT Support Technicians are already assigned delegated rights over the whole Clients OU scope rather than delegating separate scopes for managing laptops vs managing desktops.
+
+In `Example B` delegating that access would require delegation to two different scopes, and adding further devices in future would require additional administrative effort.
+
+Conversely, in `Example A`, delegating access to the `London` scope allows the permitted user to swap in Laptops and Desktops as required. In future a `Mobile Phone` OU might be added under London, and no further administrative action is required to permit rotating mobile phones in the same way.
+
+Considering the requirements in this example, `Example A` below is the more optimal choice requiring a lower amount of initial and ongoing administrative effort from IT.
 
 ```null title="Example A"
 - Clients
   - London (London Office Location)
     - Laptops (Laptops Devices)
+    - Desktops (Desktop Devices)
 ```
 
 vs
@@ -29,6 +43,8 @@ vs
 ```null title="Example B"
 - Clients
   - Laptops (Laptops Devices)
+    - London (London Office Location)
+  - Desktops (Desktop Devices)
     - London (London Office Location)
 ```
 
