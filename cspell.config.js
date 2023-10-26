@@ -17,7 +17,8 @@ const config = {
     'lorem-ipsum',
     'rootwire-words',
     'people-names',
-    'tech-and-tool-words'
+    'tech-and-tool-words',
+    'made-up-words'
   ],
   dictionaryDefinitions: [
     {
@@ -33,6 +34,11 @@ const config = {
     {
       name: 'tech-and-tool-words',
       path: './data/tech-and-tool-words.txt',
+      noSuggest: true,
+    },
+    {
+      name: 'made-up-words',
+      path: './data/made-up-words.txt',
       noSuggest: true,
     },
   ],

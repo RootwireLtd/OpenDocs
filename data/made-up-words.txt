@@ -1,0 +1,3 @@
+# Keep this file sorted alphabetically
+# This file contains cspell exceptions relating to made up words/business names
+Refurbalot's
