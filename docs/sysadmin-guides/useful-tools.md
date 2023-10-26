@@ -4,6 +4,15 @@ tags:
 - tools
 ---
 
+## Tiling Window Managers
+
+- [Komorebi](https://github.com/LGUG2Z/komorebi)
+- [Workspacer](https://github.com/workspacer/workspacer)
+
+## CommandLine
+
+- [Zlocation](https://github.com/vors/ZLocation) - CommandLine Directory Aliasing tool for Windows. Tracks your most used directories and facilitates quick navigation. Similar to [fasd](https://github.com/whjvenyl/fasd) on linux.
+
 ## SaaS
 
 - [BitWarden](https://bitwarden.com/) - An easy to use, highly secure, trustworthy, cross-platform, open source password manager with a generous free SaaS offering
@@ -21,4 +30,5 @@ tags:
 
 - [BitWarden](https://bitwarden.com/download/) - An easy to use, highly secure, trustworthy, cross-platform password manager
 - [SurfingKeys](https://github.com/brookhong/Surfingkeys) - Navigate the web using your keyboard
+  - A comprehensive config repo is available [here](https://github.com/b0o/surfingkeys-conf)
 - [uBlock Origin](https://github.com/gorhill/uBlock) - Block adverts and maintain internet privacy
