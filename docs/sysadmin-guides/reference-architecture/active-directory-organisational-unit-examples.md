@@ -54,7 +54,7 @@ Considering the requirements in this example, `Example A` below is the more opti
 
 ## Representative Corporate OU Hierarchy
 
-Below is an example of a well structured OU Hierarchy for a corporate domain
+Below is an example of a well structured OU Hierarchy for a Corporate domain
 
 ```null title="AD OU Hierarchy"
 - CORP (Corporate Facing Objects)
