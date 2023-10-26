@@ -171,6 +171,14 @@ A Domain that has resources facing the public internet has a higher risk of comp
 
 The DMZ Domain should primarily contain resources, with minimal user accounts.
 
+There is some debate as to whether a trust should be formed between the DMZ domain and the corporate domain. In my experience, managing a large Windows-based DMZ without Aciive Directory quickly becomes as complicated as managing a large Windows-based Corporate domain.
+
+In my opinion, using Selective Authentication with a Master (Corp) forest and Resource (DMZ) forest is the optimal solution. 
+
+[Selective Authentication](http://technet.microsoft.com/en-us/library/cc787623%28v=ws.10%29.aspx) can then be used to allow only pre-determined sets of users to authenticate in to the DMZ resource forest. This limits the exposure of the internal AD forest while allowing for centralised administration of accounts.
+
+In the above Corp Domain OU hierarchy, DMZ accounts are under "SYS > Admins > DMZ" and accounts in these OU's would be granted minimal permissions to the Corp domain.
+
 ```null title="AD OU Hierarchy"
 
 - STAGING (New Users and Computers)
