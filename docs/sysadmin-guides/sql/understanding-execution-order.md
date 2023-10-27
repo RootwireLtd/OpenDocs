@@ -2,9 +2,11 @@
 title: Understanding SQL Query Execution Order
 ---
 
+SQL Queries execute in the following order
+
 ```mermaid
 
-graph TD
+graph LR
 
 Source
 Merged
@@ -24,4 +26,8 @@ Selected --ORDER BY--> Ordered
 Ordered --LIMIT & OFFSET--> Limited
 
 ```
+
+Resulting in a query execution order as follows
+
+
 ![](_files/SqlQueryExecutionOrder.svg)
