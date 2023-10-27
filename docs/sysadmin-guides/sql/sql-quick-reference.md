@@ -1,5 +1,8 @@
 ---
 title: SQL Quick Reference
+tags:
+- sql
+- reference
 ---
 
 ## Comments

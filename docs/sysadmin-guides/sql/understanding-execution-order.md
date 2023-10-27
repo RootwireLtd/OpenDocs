@@ -1,5 +1,8 @@
 ---
 title: Understanding SQL Query Execution Order
+tags:
+- sql
+- reference
 ---
 
 In SQL, the order in which query statements are executed generally follows a logical sequence called the "query processing order." While the specific execution order can vary depending on the database management system (DBMS) and query optimization, a general overview is as follows:
