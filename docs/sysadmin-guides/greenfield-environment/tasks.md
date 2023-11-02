@@ -4,6 +4,11 @@ title: Tasks Checklist
 
 For this checklist, we will assume a mixed Windows and Linux based business environment, with the majority of users working from Windows workstations.
 
+## Create Systems of Record
+
+- [ ] Documentation / Wiki
+- [ ] IP Address Management
+
 ## Plan the deployment
 
 - [ ] Create a Subnetting strategy
