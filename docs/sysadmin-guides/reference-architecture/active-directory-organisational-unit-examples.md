@@ -53,116 +53,132 @@ Considering the requirements in this example, `Example A` below is the more opti
 
 ## Representative Corporate OU Hierarchy
 
-Below is an example of a well structured OU Hierarchy for a Corporate domain
+Below is an example of an OU heirarchy for a Corporate domain. 
+This doesn't necessarily follow the direct examples elsewhere in the document, but serves as a reference pattern for a well structured pattern for you to adapt to your own needs
 
 ```null title="AD OU Hierarchy"
 - CORP (Corporate Facing Objects)
-  - Clients
-    - LON (London)
-      - Laptops (Laptops)
-      - Desktops (Desktops Workstations)
-      - Mobiles (Mobile Devices)
-      - Tablets (Tablet Devices)
-    - BMT (Bournemouth)
-      - Laptops (Laptops)
-      - Desktops (Desktops Workstations)
-      - Mobiles (Mobile Devices)
-      - Tablets (Tablet Devices)
-    - REM (Remote / Non-office based)
-  - Users
-    - LON (London)
-    - BMT (Bournemouth)
-    - EXT (External / 3rd Party)
-    - REM (Remote / Non-office based)
+  - Identity
+    - Users
+      - LON (London)
+      - BMT (Bournemouth)
+      - EXT (External / 3rd Party)
+      - REM (Remote / Non-office based)
+    - Devices # End User client devices
+      - LON (London)
+        - Laptops (Laptops)
+        - Desktops (Desktops Workstations)
+        - Mobiles (Mobile Devices)
+        - Tablets (Tablet Devices)
+      - BMT (Bournemouth)
+        - Laptops (Laptops)
+        - Desktops (Desktops Workstations)
+        - Mobiles (Mobile Devices)
+        - Tablets (Tablet Devices)
+      - REM (Remote / Non-office based)
   - Groups
-    - JobTitles
-    - Roles
-  - Departments
-    - Common
-      - Groups
-        - JobTitles (Could be delegated to HR)
-        - Roles
-      - Resources
-        - FileShares
-          - OrgPolicies
-            - ACLs
-        - Applications
-          - EmployeePortal
-            - ACLs
+    - Global
+      - Roles (Business Level Roles / Job Titles)
+        - Staff # Example Domain Global Security Group for all members of staff
     - Finance
-      - Groups
-        - Roles (Departmental roles like Accounts Payable / Accounts Receivable)
-      - Resources
-        - FileShares
-          - Accounts
-            - ACLs
-        - Apps
-          - AccountingSoftware
-            - ACLs
+      - Roles (Business Level Roles / Job Titles)
+        - Finance Apprentice # Example Domain Global Security Group for Finance Apprentices
     - IT
-      - Groups
-        - Roles (Departmental roles like Documentation Contributor / Helpdesk Auditor)
-      - Resources
-        - FileShares
-          - SoftwareLibrary
-            - ACLs
-        - Apps
-          - Helpdesk
-            - ACLs (EG: Read Ticket / Update Ticket)
+      - Roles (Business Level Roles / Job Titles)
+        - Support Agent # Example Domain Global Security Group for IT Support Agents
+        - Network Admin # Example Domain Global Security Group for IT Network Admins
+        - System Admin # Example Domain Global Security Group for IT System Admins
 - STAGING (New Users and Computers)
   - New Users
   - New Computers
 - SYS (System Administrative Facing Objects)
-  - Admins
-    - Corp (Administrative Accounts for working with the Corporate Domain)
-      - T0C (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative access)
-      - T1C (Tier 1 / Administrative Access over Corporate servers or groups of servers)
-      - T2C (Tier 2 / Administrative Access over Corporate workstations or groups of workstations)
-      - T3C (Tier 3 / Administrative Access over Corporate applications or groups of applications)
-    - DMZ (Separate Administrative accounts for working with the DMZ Domain)
-      - T0D (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative)
-      - T1D (Tier 1 / Administrative Access over DMZ servers or groups of servers)
-      - T2D (Tier 2 / Administrative Access over DMZ workstations or groups of workstations)
-      - T3D (Tier 3 / Administrative Access over DMZ applications or groups of applications)
-  - Groups
-    - Roles
-    - ACLs
-    - AdDelegation (Active Directory Delegation)
-  - Departmental Resources
-    - Common
-      - Servers
-    - Infrastructure
-      - Servers
-        - Hypervisors
-    - Supply
-      - Servers
-        - Monitoring Database
-        - Monitoring Application
-        - Logging Database
-        - Logging Application
-    - Virtualisation Team
-      - Servers
-        - Hypervisors
-  - Servers
-    - NonProduction
-    - Infrastructure
-      - Hypervisors
-    - Supply (Provides common services to Corporate systems)
-      - Internal DNS Server
-      - Monitoring Database
-      - Monitoring Application
-      - Logging Database
-      - Logging Application
-      - Mail Database
-      - Mail Server
-      - Mail Relay (Internal Mail Relay)
-    - Corporate (Provides services to the internal corporate business users and systems)
-      - File Servers
-      - LineOfBusiness Database
-      - LineOfBusiness Web Application
-    - Production (Provides services to external customers)
-      - Widget Database
-      - Widget Application Server
+  - Identity
+    - PAM Accounts # Privileged Access Management User Accounts
+      - Corp (Administrative Accounts for working with the Corporate Domain)
+        - T0C (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative access)
+        - T1C (Tier 1 / Administrative Access over Corporate servers or groups of servers)
+        - T2C (Tier 2 / Administrative Access over Corporate workstations or groups of workstations)
+        - T3C (Tier 3 / Administrative Access over Corporate applications or groups of applications)
+      - DMZ (Separate Administrative accounts for working with the DMZ Domain)
+        - T0D (Tier 0 / Highest Privilege - Enterprise / Domain / Global Administrative)
+        - T1D (Tier 1 / Administrative Access over DMZ servers or groups of servers)
+        - T2D (Tier 2 / Administrative Access over DMZ workstations or groups of workstations)
+        - T3D (Tier 3 / Administrative Access over DMZ applications or groups of applications)
+  - Resources
+    - Infrastructure # Covers Networking, Storage, Servers, and Virtualisation
+      - Networking
+        - Global
+          - ACLs
+          - Roles
+          - ServiceAccounts
+      - Storage
+        - Global
+          - ACLs
+          - Roles
+          - ServiceAccounts
+      - Physical Servers
+        - Global
+          - ACLs
+            - ACL_PhysicalServer_LocalAdministrator_Global # Example Domain Local Security Group
+          - Roles
+            - Physical Server Administrator - Global # Example Global Security Group
+          - ServiceAccounts
+        - Svr-1234
+          - ACLs
+            - ACL_PhysicalServer_LocalAdministrator_Global # Example Domain Local Security Group
+          - Roles
+            - Physical Server Administrator - Global # Example Global Security Group
+          - ServiceAccounts
+      - Virtualisation
+        - Global
+          - ACLs
+            - ACL_Virtualisation_Administrator_Global # Example Domain Local Security Group
+          - Roles
+            - Virtualisation Administrator - Global # Example Global Security Group
+          - ServiceAccounts
+    - Platform # Covers VirualMachines/OS, Middleware, Runtime
+      - VirtualMachines
+        - Global
+          - ACLs
+            - ACL_VirtualMachine_LocalAdministrator_Global # Example Domain Local Security Group
+            - ACL_VirtualMachine_RemoteLogin_Global # Example Domain Local Security Group
+          - Roles
+            - Virtual Machine Administrator - Global # Example Global Security Group
+            - Virtual Machine Remote User - Global # Example Global Security Group
+          - ServiceAccounts
+      - Middleware
+        - Global
+          - ACLs
+          - Roles
+          - ServiceAccounts
+      - Runtime
+        - Global
+          - ACLs
+          - Roles
+          - ServiceAccounts
+    - Software # Covers Data and Applications
+      - Data
+        - Global
+          - ACLs
+            - ACL_Data_Administrator_Global # Example Domain Local Security Group
+          - Roles
+            - Data Administrator - Global
+          - ServiceAccounts
+      - Applications
+        - Global
+          - ACLs
+            - ACL_Application_Administrator_Global # Example Domain Local Security Group
+          - Roles
+            - Application Administrator - Global
+          - ServiceAccounts
+        - LOB-Application-1
+          - ACLs
+            ACL_Application_Administrator_LOB-Application-1 # Example Domain Local Security Group
+          - Roles
+            - Application Administrator - LOB Application 1 # Example Global Security Group
+          - ServiceAccounts
+            - Svc.LOBApplication1-Runtime # Example Service account for the Application to run under
+            - Svc.LobApplication1-Cron-DataLoad # Example Service account for scheduled task/chron job to periodically load data
 ```
 
 ## Representative DMZ Domain OU Hierarchy
