@@ -11,7 +11,7 @@ Naming conventions for client computers, laptops, desktops, and phones should me
 1. The name is guaranteed to be unique
 2. The name can be derived by knowing properties of the system
 3. The name is not dependent on the current location of the system - meaning it can be moved without requiring renaming
-4. The name is not dependent on the use to whom it is assigned - meaning it can be reassigned without requiring renaming
+4. The name is not dependent on the user to whom it is assigned - meaning it can be reassigned without requiring renaming
 5. The computer name can be generated automatically
 6. The name reflects fixed properties about the system that are otherwise cumbersome to determine
 
