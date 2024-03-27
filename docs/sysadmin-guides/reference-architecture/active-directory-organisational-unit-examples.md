@@ -2,8 +2,8 @@
 title: Active Directory Organisational Unit Hierarchy examples
 sidebar_label: AD OU Hierarchy examples
 tags:
-- active directory
-- os:windows
+  - active directory
+  - os:windows
 ---
 
 ## Naming Structure
@@ -53,7 +53,7 @@ Considering the requirements in this example, `Example A` below is the more opti
 
 ## Representative Corporate OU Hierarchy
 
-Below is an example of an OU heirarchy for a Corporate domain. 
+Below is an example of an OU hierarchy for a Corporate domain.
 This doesn't necessarily follow the direct examples elsewhere in the document, but serves as a reference pattern for a well structured pattern for you to adapt to your own needs
 
 ```null title="AD OU Hierarchy"
@@ -136,7 +136,7 @@ This doesn't necessarily follow the direct examples elsewhere in the document, b
           - Roles
             - Virtualisation Administrator - Global # Example Global Security Group
           - ServiceAccounts
-    - Platform # Covers VirualMachines/OS, Middleware, Runtime
+    - Platform # Covers Virtual Machines/OS, Middleware, Runtime
       - VirtualMachines
         - Global
           - ACLs
@@ -213,7 +213,7 @@ In the above Corp Domain OU hierarchy, DMZ accounts are under "SYS > Admins > DM
       - Reverse Proxy (Reverse Proxy / Http Gateway)
       - Load Balancer (Load Balancer)
     - Production (Provides services to external customers)
-      - External DNS Sever 
+      - External DNS Sever
       - Reverse Proxy (Production outbound traffic)
       - WAF (Web Application Firewall)
       - NoSQL Cache
